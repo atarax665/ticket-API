@@ -1,4 +1,4 @@
 module.exports = {
-  MONGOURI: "mongodb+srv://atarax:atarax@ticket-api.ub7wvbc.mongodb.net/?retryWrites=true&w=majority",
+  MONGOURI: process.env.MONGOURI,
   JWT_SECRET: "jkjknjksdkjsdcklmdslkwe"
 }
