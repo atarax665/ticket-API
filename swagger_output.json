@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "TICKET API",
+    "description": "Endpoints for a ticketing system backend."
   },
   "host": "localhost:3000",
   "basePath": "/",
@@ -13,7 +13,7 @@
   "paths": {
     "/users/new": {
       "post": {
-        "description": "",
+        "description": "Accepts 'username' and 'role' as Body Parameter and returns an Auth Token.",
         "parameters": [
           {
             "name": "body",
@@ -43,7 +43,7 @@
     },
     "/tickets/new": {
       "post": {
-        "description": "",
+        "description": "accepts 'title' and 'description' as Body Parameter and returns an ID. \n Note : Ticket can only be raised when Auth Token passed is of Admin",
         "parameters": [
           {
             "name": "authorization",
@@ -87,7 +87,7 @@
     },
     "/tickets/all": {
       "get": {
-        "description": "",
+        "description": " Return all tickets",
         "parameters": [
           {
             "name": "authorization",
@@ -107,7 +107,7 @@
     },
     "/tickets/": {
       "get": {
-        "description": "",
+        "description": " (/tickets/[param]) can accept various params in url as query to return specific ticket objects. \n /tickets/?status=open/close returns tickets according to status \n /tickets/?title= searches for the particular title \n  /tickets/?priority=low/medium/high returns ticket according to priority",
         "parameters": [
           {
             "name": "status",
@@ -142,7 +142,7 @@
     },
     "/tickets/delete": {
       "post": {
-        "description": "",
+        "description": "Delete a particular ticket. \n Note : Only Admin can delete tickets",
         "parameters": [
           {
             "name": "authorization",
@@ -174,7 +174,7 @@
     },
     "/tickets/markAsClosed": {
       "post": {
-        "description": "",
+        "description": "Auth Token of the user assigned to the ticket can only close the request or the admin, any other token should return unauthorised. \n Ticket cannot be closed if another higher priority ticket has been assigned to the same user",
         "parameters": [
           {
             "name": "authorization",
