@@ -5,7 +5,7 @@
     "title": "TICKET API",
     "description": "Endpoints for a ticketing system backend."
   },
-  "host": "localhost:3000",
+  "host": "https://theticketapi.herokuapp.com/",
   "basePath": "/",
   "schemes": [
     "http"
